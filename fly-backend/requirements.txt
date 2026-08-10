@@ -1,4 +1,0 @@
-websockets
-python-dotenv
-requests
-groq
