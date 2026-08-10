@@ -240,7 +240,7 @@ export default function HomePage({ onEnter }: HomePageProps) {
           </div>
           <div className="relative z-10 text-center px-6 max-w-3xl">
             <h1 className="fade-up text-4xl md:text-6xl font-medium text-white tracking-tight drop-shadow-lg">
-              Smart Server Room
+              Project Zephyr
             </h1>
             <p className="fade-up text-lg md:text-xl text-white/90 mt-4 font-light" style={{ transitionDelay: '120ms' }}>
               Autonomous cooling for the next decade of compute.
@@ -343,7 +343,7 @@ export default function HomePage({ onEnter }: HomePageProps) {
             <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Hello&to=sidsvictus@gmail.com&body" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="w-4 h-4" /> sidsvictus@gmail.com
             </a>
-            <span className="text-sm">&copy; 2026 Smart Server Room. Open source under Apache 2.0 License.</span>
+            <span className="text-sm">&copy; 2026 Project Zephyr. Open sourced under Apache 2.0 License.</span>
           </div>
         </footer>
 

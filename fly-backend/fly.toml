@@ -1,4 +1,5 @@
-app = "smart-server-room-backend"
+app = "zephyr-backend"
+primary_region = "sjc"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
@@ -14,6 +15,9 @@ kill_timeout = 5
 [[services]]
   internal_port = 8765
   protocol = "tcp"
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
 
   [services.concurrency]
     type = "connections"
@@ -28,8 +32,12 @@ kill_timeout = 5
     handlers = ["tls", "http"]
     port = 443
 
-  [services.tcp_checks]
+  [[services.tcp_checks]]
     interval = "15s"
     timeout = "2s"
     grace_period = "10s"
     restart_limit = 0
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"

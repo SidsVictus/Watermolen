@@ -1,4 +1,21 @@
+"""Copyright 2026 [Project Zephyr]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://apache.org
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 """
+
+
+"""
+────────────
 ws_server.py
 ────────────
 WebSocket server — bridges the Python agent loop to the React dashboard.
@@ -102,13 +119,13 @@ def start_server(port: int = 8765):
     import websockets
 
     async def _serve():
-        global _loop
-        _loop = asyncio.get_running_loop()
         logger.info(f"WS server listening on ws://0.0.0.0:{port}")
         async with websockets.serve(_handler, "0.0.0.0", port):
             await asyncio.Future()   # run forever
 
-    asyncio.run(_serve())
+    _loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(_loop)
+    _loop.run_until_complete(_serve())
 
 
 if __name__ == "__main__":

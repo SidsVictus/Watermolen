@@ -1,4 +1,15 @@
 node_modules/
 __pycache__/
+dist/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment & secrets
 .env
+.env.local
+.env.*.local
 memory_store.json
+
+# Fly.io
+fly-backend/.env

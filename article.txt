@@ -1,0 +1,53 @@
+{/* ── ARTICLE ───────────────────────────────────────────────────── */}
+        <div className="py-24 px-6 bg-[#372513]/10">
+          <div className="max-w-5xl mx-auto">
+
+            <div className="fade-up text-center mb-20">
+              <span className="text-sm font-mono text-[#372513]/70 border-b-2 border-[#372513] pb-1">ARTICLE</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#372513] mt-4">Forged at ForgeInspira 2026</h2>
+              <p className="text-lg text-[#372513]/70 mt-4 max-w-2xl mx-auto">
+                A hackathon problem statement that became a vision for sustainable data centres.
+              </p>
+            </div>
+
+            {/* Timeline */}
+            <div className="relative">
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#372513]/20" />
+
+              {TIMELINE.map((item, idx) => {
+                const hasImage = idx < 3;
+                return (
+                  <div
+                    key={idx}
+                    className={`fade-up relative ${idx < 3 ? 'mb-20' : 'mb-16'}`}
+                    style={{ transitionDelay: `${idx * 80}ms` }}
+                  >
+                    <div className="grid md:grid-cols-2 gap-8 items-start">
+                      <div className={`${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                        <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-6 shadow-md">
+                          <span className="text-sm font-mono text-[#372513] font-bold">{item.year}</span>
+                          <h3 className="text-2xl font-bold text-[#372513] mt-1">{item.title}</h3>
+                          <p className="text-[#372513]/80 mt-2 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+
+                      <div className={`${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                        {hasImage && (
+                          <div className="img-reveal rounded-2xl overflow-hidden aspect-video bg-[#372513]/5 border border-[#372513]/10 shadow-md flex items-center justify-center"
+                            style={{ transitionDelay: `${idx * 80 + 180}ms` }}>
+                            {idx === 0 && <img src="/1.jpg" alt="Event photo 1" className="w-full h-full object-cover" />}
+                            {idx === 1 && <img src="/2.jpg" alt="Event photo 2" className="w-full h-full object-cover" />}
+                            {idx === 2 && <img src="/3.jpg" alt="Event photo 3" className="w-full h-full object-cover" />}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="absolute left-2 md:left-1/2 top-4 w-4 h-4 rounded-full bg-[#372513] -translate-x-1/2" />
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>

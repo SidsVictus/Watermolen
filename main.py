@@ -1,4 +1,4 @@
-"""Copyright 2026 [Your Full Name or Company Name]
+"""Copyright 2026 Project Zephyr
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@ limitations under the License.
 
 
 """
+───────
 main.py
 ───────
 Orchestrator — runs the full agent loop every 5 seconds.
@@ -214,3 +215,4 @@ if __name__ == "__main__":
     time.sleep(1.0)
 
     run_agent()
+
